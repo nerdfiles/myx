@@ -17,4 +17,9 @@ Now go to [http://localhost:3000](http://localhost:3000) and use your trackpad/m
 
 1. A good chance for DualAPI?
 2. Make it microservice-y?
-3. Need some awful UI patterns and textures with noisome distractions to undermine the players. Make them hate the game.
+3. Need some awful UI (anti-)patterns and bustified textures with noisome distractions to undermine the players. Make neurotypicals hate the game (but ensure that it has a non-seizure mode, too).
+4. Hypermediafy it
+5. Angularize it
+6. Make it AMD
+7. Add some Gulp
+8. Use r.js > Cordova, etc.
