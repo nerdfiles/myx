@@ -1,6 +1,6 @@
 # myx
 
-Send a base64 string to the browser via socket.
+Send a nicepass string to the browser via WebSocket.
 
 ## Prepare and Install
 
