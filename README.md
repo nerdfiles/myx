@@ -9,4 +9,4 @@ Send a nicepass string to the browser via WebSocket.
     $ npm i
     $ npm run server
 
-Now go to http://localhost:3000/ and use your trackpad/mouse to doubleclick, select all the `<input>` field, then secondary click, copy the passphrase.
+Now go to http://localhost:3000/ and use your trackpad/mouse to triple click, select all the `<input>` field, then secondary click, copy the passphrase.
