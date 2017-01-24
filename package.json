@@ -7,7 +7,7 @@
   "author": "",
   "license": "WTFPL",
   "scripts": {
-    "server": "node myx.js"
+    "server": "node index.js"
   },
   "dependencies": {
     "express": "^4.14.0",
