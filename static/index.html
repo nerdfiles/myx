@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+</head>
+<body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    var socket = io();
+    var body = document.querySelector('body');
+    var p = document.createElement("p");
+    var content = document.createTextNode("Connected!");
+    p.appendChild(content);
+    var updatedP = document.createElement("p");
+
+    socket.on('connect', () => {
+      body.appendChild(p);
+    });
+    socket.on('update', (data) => {
+      var d = JSON.stringify(data);
+      var updatedContent = document.createTextNode(d);
+      body.appendChild(updatedContent);
+    });
+    document.addEventListener('keydown', (event) => {
+      const keyName = event.key;
+      socket.emit('update', event.which);
+    });
+  });
+</script>
+</body>
+</html>
+
