@@ -1,6 +1,6 @@
 # myx
 
-Send a nicepass string to the browser via WebSocket.
+Send a nicepass string to the browser via WebSocket. The user who types it in the fastest per round wins like a million bitcoins.
 
 ## Prepare and Install
 
