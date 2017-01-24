@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   var socket = io();
-  var title = document.querySelector('title');
-  var content = document.createTextNode("Connected!");
-  var updatedP = document.createElement("p");
+  const title = document.querySelector('title');
+  const content = document.createTextNode("Connected!");
 
   socket.on('connect', () => {
     title.appendChild(content);
   });
 
   socket.on('update', (data) => {
-    var myx = document.querySelector('#myx')
-    myx.value = data.state;
+    const myx = document.querySelector('#myx');
+    myx.value = data.state.split(',').join(' ');
   });
 
   document.addEventListener('keydown', (event) => {

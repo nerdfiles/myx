@@ -1,17 +1,18 @@
 /* @fileOverview ./server.js
  */
-var express = require('express');
-var path = require('path');
-var app = express();
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+const express = require('express');
+const path = require('path');
+const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+const niceware = require('niceware');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 server.listen(3000, function () {
   console.log('Server started!');
 });
-var spawn = require('child_process').spawn;
+// var spawn = require('child_process').spawn;
 
 io.on('connection', function (socket) {
   console.log('Connected!');
@@ -20,16 +21,19 @@ io.on('connection', function (socket) {
     console.log('Update keydown!');
     console.log(data);
 
-    var child = spawn('openssl', ['rand', '-base64', '10']);
+    // var child = spawn('openssl', ['rand', '-base64', '10']);
+    const passphrase = niceware.generatePassphrase(8);
+    gameState.state = passphrase.toString();
+    socket.emit('update', gameState);
 
-    child.stdout.on('data', function (password) {
-      gameState.state = password.toString();
-      socket.emit('update', gameState);
-    });
+    // child.stdout.on('data', function (password) {
+    //   gameState.state = password.toString();
+    //   socket.emit('update', gameState);
+    // });
 
-    child.stderr.on('data', function (data) {
-      process.stdout.write(data.toString());
-    });
+    // child.stderr.on('data', function (data) {
+    //   process.stdout.write(data.toString());
+    // });
 
   });
 

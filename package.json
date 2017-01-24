@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "loop.js",
-  "scripts": {},
-  "author": "",
-  "license": "WTFPL",
   "scripts": {
     "server": "node index.js"
   },
+  "author": "",
+  "license": "WTFPL",
   "dependencies": {
     "express": "^4.14.0",
+    "niceware": "^1.0.4",
     "socket.io": "^1.7.2"
   },
   "devDependencies": {
